@@ -1,0 +1,30 @@
+<form (ngSubmit)="onSubmit()">
+  <label>
+    <span>Color 1:&nbsp;</span>
+    <input
+      type="color"
+      id="colour1"
+      name="colour1"
+      required
+      [(ngModel)]="formData.colour1"
+      #colour1="ngModel"
+      (change)="colourValidation($event)"
+    />
+  </label>
+  <br />
+  <label>
+    <span>Color 2:&nbsp;</span>
+    <input
+      type="color"
+      id="colour2"
+      name="colour2"
+      required
+      [(ngModel)]="formData.colour2"
+      #colour2="ngModel"
+      (change)="colourValidation($event)"
+    />
+  </label>
+  <p [hidden]="isFormValid">Les couleurs doivent être différentes.</p>
+  <br />
+  <button type="submit">Envoyer</button>
+</form>
